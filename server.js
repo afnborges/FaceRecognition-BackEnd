@@ -40,7 +40,7 @@ CREATE TABLE login(
 */
 
 app.get('/', (req, res) => {
-	res.send(database.users);
+	res.send(console.log('working'));
 })
 
 app.post('/signin', signin.handleSignin(db, bcrypt) )
@@ -53,6 +53,6 @@ app.put('/image', image.handleImage(db))
 
 app.post('/imageurl', (req, res) => {image.handleApiCall(req, res)})
 
-app.listen(3000, ()=>{
-	console.log('app is running on port 3000')
+app.listen(process.env.PORT || 3000, ()=>{
+	console.log(`app is running on port 3000 ${process.env.PORT}`)
 })
