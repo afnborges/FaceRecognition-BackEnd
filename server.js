@@ -40,7 +40,7 @@ CREATE TABLE login(
 */
 
 app.get('/', (req, res) => {
-	res.send(console.log('working'));
+	res.send('working');
 })
 
 app.post('/signin', signin.handleSignin(db, bcrypt) )
